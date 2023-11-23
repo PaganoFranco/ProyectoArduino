@@ -1,6 +1,6 @@
 #include <Servo.h>
 
-int Lecturas[10]; // Vector de lecturas para almacenar las lecturas del potenciómetro.
+int Lecturas[500]; // Vector de lecturas para almacenar las lecturas del potenciómetro.
 int Val, i = 0, Total = 0, Promedio = 0;
 Servo Servo1; // Primer servo.
 Servo Servo2; // Segundo servo.
@@ -31,11 +31,11 @@ void loop() {
     Promedio = Total / 10;
     
     // Ajusta el valor para el primer servo (rango 0 a 179 grados).
-    Val = map(Promedio, 0, 1023, 0, 179);
+    Val = map(Promedio, 0, 1023, 0, 90);
     Servo1.write(Val);
     
     // Ajusta el valor para el segundo servo (rango 179 a 0 grados).
-    Val = map(Promedio, 0, 1023, 179, 0);
+    Val = map(Promedio, 0, 1023, 110, 0);
     Servo2.write(Val);
     
     // Muestra el valor en el monitor serial para propósitos de depuración.
