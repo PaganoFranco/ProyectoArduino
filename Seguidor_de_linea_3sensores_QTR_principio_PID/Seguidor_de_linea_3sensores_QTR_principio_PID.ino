@@ -1,5 +1,5 @@
 const int sensorPines[] = {A1, A2, A3};
-int velocidad = 70;
+int velocidad = 150;
 float Kp = 20;
 int umbral = 800;
 

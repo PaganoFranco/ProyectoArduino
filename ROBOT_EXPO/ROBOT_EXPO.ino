@@ -15,8 +15,8 @@ int Stop = A0;
 int Stop2 = A1;
 int giroIz = A2;
 int giroDr = A3;
-int velocidad = 100;
-float cuidado = 40;
+int velocidad = 120;
+float cuidado = 15;
 
 float distance;   // Variable global para la distancia del primer sensor ultrasónico
 float duration;   // Variable global para la duración del pulso del primer sensor ultrasónico

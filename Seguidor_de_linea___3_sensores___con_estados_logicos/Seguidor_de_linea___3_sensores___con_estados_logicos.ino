@@ -16,7 +16,7 @@
 
 #define L_S A3 // Sensor IR Izquierdo
 
-int velocidad = 100;
+int velocidad = 110;
 
 int estado = 0; 
 
@@ -43,24 +43,9 @@ void setup() {
 }
 
 void loop() {
+  /*
 
-  if ((digitalRead(R_S) == 1) && (digitalRead(C_S) == 1) && (digitalRead(L_S) == 1) || estado == 1) {
-    detener();
-    estado = 1; 
-    //adelante();
-  } // Si el sensor derecho y el sensor izquierdo están en color blanco, llamará a la función adelante
-
-  if ((digitalRead(R_S) == 1) && (digitalRead(C_S) == 0) && (digitalRead(L_S) == 0 || estado == 2)) {
-    girarIzquierda(10);
-    estado = 2; 
-    //girarDerecha();
-  } // Si el sensor derecho está en negro y el sensor izquierdo está en blanco, llamará a la función girar a la derecha
-
-  if ((digitalRead(R_S) == 1) && (digitalRead(C_S) == 1) && (digitalRead(L_S) == 0) || estado == 3) {
-    girarIzquierda(20);
-    estado = 3;
-    //girarDerecha();
-  } 
+  
 
   if ((digitalRead(R_S) == 0) && (digitalRead(C_S) == 0) && (digitalRead(L_S) == 1) || estado == 4) {
     girarDerecha(10);
@@ -69,17 +54,44 @@ void loop() {
   } // Si el sensor derecho está en blanco y el sensor izquierdo está en negro, llamará a la función girar a la izquierda
 
 
-  if ((digitalRead(R_S) == 0) && (digitalRead(C_S) == 1) && (digitalRead(L_S) == 1) || estado == 5) {
-    girarDerecha(20);
-    estado = 5; 
-    //girarIzquierda();
-  } 
-  if ((digitalRead(R_S) == 1) && (digitalRead(L_S) == 1) && (digitalRead(C_S) == 0) || estado == 6) {
+  
+  */
+  if ((digitalRead(R_S) == 0) && (digitalRead(L_S) == 0) && (digitalRead(C_S) == 0) || estado == 6) {
     adelante();
     estado = 6; 
     //detener();
   } // Si el sensor derecho y el sensor izquierdo están en color negro, llamará a la función detener
 
+    if ((digitalRead(R_S) == 0) && (digitalRead(C_S) == 1) && (digitalRead(L_S) == 0) || estado == 1) {
+    detener();
+    estado = 1; 
+    //adelante();
+  } // Si el sensor derecho y el sensor izquierdo están en color blanco, llamará a la función adelante
+
+  if ((digitalRead(R_S) == 0) && (digitalRead(C_S) == 1) && (digitalRead(L_S) == 1) || estado == 5) {
+    //girarDerecha(20);
+    estado = 5; 
+    girarIzquierda(20);
+  }
+
+  if ((digitalRead(R_S) == 0) && (digitalRead(C_S) == 0) && (digitalRead(L_S) == 1) || estado == 4) {
+    //girarDerecha(10);
+    estado = 4; 
+    girarIzquierda(10);
+  } // Si el sensor derecho está en blanco y el sensor izquierdo está en negro, llamará a la función girar a la izquierda
+  
+
+  if ((digitalRead(R_S) == 1) && (digitalRead(C_S) == 0) && (digitalRead(L_S) == 0 || estado == 2)) {
+    //girarIzquierda(10);
+    estado = 2; 
+    girarDerecha(10);
+  } // Si el sensor derecho está en negro y el sensor izquierdo está en blanco, llamará a la función girar a la derecha
+
+  if ((digitalRead(R_S) == 1) && (digitalRead(C_S) == 1) && (digitalRead(L_S) == 0) || estado == 3) {
+    //girarIzquierda(20);
+    estado = 3;
+    girarDerecha(20);
+  } 
 }
 
 void adelante() { // adelante

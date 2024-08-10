@@ -1,7 +1,7 @@
 const int sensorPines[] = {A0, A1, A2, A3, A4};
-int velocidad = 180;
-float Kp = 20;
-int umbral = 800;
+int velocidad = 130;
+float Kp = 30;
+int umbral = 700;
 
 void setup() {
   for (int i = 0; i < 5; i++) {
